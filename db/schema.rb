@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_134444) do
+ActiveRecord::Schema.define(version: 2020_01_24_150503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,4 +27,23 @@ ActiveRecord::Schema.define(version: 2020_01_24_134444) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.string "name"
+    t.string "route"
+    t.integer "position"
+    t.integer "parent"
+    t.bigint "navigation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["navigation_id"], name: "index_menus_on_navigation_id"
+  end
+
+  create_table "navigations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_navigations_on_name", unique: true
+  end
+
+  add_foreign_key "menus", "navigations"
 end
