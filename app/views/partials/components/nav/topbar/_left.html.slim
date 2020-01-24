@@ -1,0 +1,11 @@
+- phone = Brand.first ? Brand.first.phone : "(+84)155688566"
+- email = Brand.first ? Brand.first.email : "sk@store.com"
+ul.top-contact.list-unstyled
+  li
+    a href="tel:#{phone}"
+      = image_tag "sk/icons/top-bar/1.png"
+      = phone
+  li
+    a href="mailto:#{email}"
+      = image_tag "sk/icons/top-bar/2.png"
+      = email

@@ -1,0 +1,14 @@
+ul.top-menu.list-unstyled
+  li.dropdown
+    a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+      i.fa.fa-user
+    = render partial: "partials/components/nav/topbar/login-form"
+  li.dropdown
+    a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+      i.fa.fa-luggage-cart
+      span.badge 3
+    = render partial: "partials/components/nav/topbar/cart"
+  li.dropdown
+    a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+      i.fa.fa-search-plus
+    = render partial: "partials/components/nav/topbar/search-form"
