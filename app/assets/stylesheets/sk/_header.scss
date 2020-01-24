@@ -144,7 +144,6 @@
 		padding: 0 10px;
 		box-shadow: none;
 		font-size: 12px;
-		border-right: none;
 		font-family: $font3;
 		@include transition;
 		&::-moz-placeholder {
@@ -162,14 +161,6 @@
 			& + .input-group-addon{
 			}
 		}
-	}
-	.input-group-addon{
-		border-radius: 0;
-		padding: 0 8px;
-		font-size: 12px;
-		background: none;
-		border-left: none;
-		@include transition;
 	}
 	.buttons-row{
 		padding-top: 10px;

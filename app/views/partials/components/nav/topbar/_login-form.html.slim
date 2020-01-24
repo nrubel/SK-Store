@@ -1,26 +1,29 @@
+- fb = Brand.first ? Brand.first.facebook : ""
+- tw = Brand.first ? Brand.first.twitter : ""
+- ln = Brand.first ? Brand.first.linkedin : ""
+
 .dropdown-menu.dropdown-menu-right
   form.login-form-dropdown action="#" method="post"
     .input-group
       input.form-control placeholder=("Username or Email Address") type="text"
-      span.input-group-addon
-        i.icon-user
     .input-group
       input.form-control placeholder="Password" type="password"
-      span.input-group-addon
-        i.icon-lock
-    .buttons-row
+    .buttons-row.mt-0
       a.btn.btn-outline.btn-sm href="#"  register
       input.btn.btn-sm.btn-default type="submit" value="login"
     .contact-with.row.justify-content-between.mx-0.align-items-center
       h6.this-title.mb-0
         | Contact With
       ul.list-unstyled
-        li
-          a href="#"
-            i.fab.fa-twitter
-        li
-          a href="#"
-            i.fab.fa-facebook
-        li
-          a href="#"
-            i.fab.fa-google-plus
+        - if tw
+          li
+            a href="#{tw}"
+              i.fab.fa-twitter
+        - if fb
+          li
+            a href="#{fb}"
+              i.fab.fa-facebook
+        - if ln
+          li
+            a href="#{ln}"
+              i.fab.fa-linkedin
