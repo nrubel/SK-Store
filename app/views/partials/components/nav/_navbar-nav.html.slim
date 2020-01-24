@@ -1,0 +1,3 @@
+ul.navbar-nav.main-desktop-nav
+  - Menu.all.each do |m|
+    = render partial: "partials/components/nav/navbar-menu-item", locals: {menu: m} if m.navigation_id == nav_id

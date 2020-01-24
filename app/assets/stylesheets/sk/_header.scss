@@ -279,3 +279,23 @@
 		font-family: $font;
 	}
 }
+
+.navbar-brand{
+  &.mobile-logo{
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  &.desktop-logo{
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.main-nav{
+  .navbar-brand{
+    margin: 0 40px;
+  }
+}
