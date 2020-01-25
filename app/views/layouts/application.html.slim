@@ -12,9 +12,10 @@ html
     link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css" /
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-  body
+  body.d-flex.flex-column.min-vh-100
     = render partial: "partials/header"
     = yield
+    = render partial: "partials/footer"
 
     / js files
     script src="https://kit.fontawesome.com/799dc280ec.js"
