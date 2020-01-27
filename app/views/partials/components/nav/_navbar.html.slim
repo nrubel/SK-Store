@@ -1,0 +1,14 @@
+- navLeft = Navigation.find_by(name: "Header Left") || 0
+- navRight = Navigation.find_by(name: "Header Right") || 0
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-white.navigation
+  .container
+    a.navbar-brand.d-block.d-lg-none href="#"
+      = image_tag "sk/logo-2.png"
+    button.navbar-toggler aria-controls="navbarNav" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNav" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse.main-nav.justify-content-center
+      = render partial: "partials/components/nav/navbar-nav", locals: {nav_id: navLeft.id} if navLeft
+      a.navbar-brand.d-none.d-lg-block href="#"
+        = image_tag "sk/logo-2.png"
+      = render partial: "partials/components/nav/navbar-nav", locals: {nav_id: navRight.id} if navRight
