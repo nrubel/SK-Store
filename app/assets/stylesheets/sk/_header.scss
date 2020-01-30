@@ -204,31 +204,31 @@
 			}
 		}
 	}
-	.contact-with{
-		.this-title{
-			font-size: 10px;
-			font-family: $font;
-			text-transform: uppercase;
-			margin-top: 0;
-			margin-bottom: 10px;
-		}
-		ul{
-			display: table;
-			li{
-				float: left;
-				& + li{
-					margin-left: 12px;
-				}
-				a{
-					line-height: 1;
-					padding: 0;
-					i{
-						font-size: 12px;
-					}
-				}
-			}
-		}
-	}
+}
+.contact-with{
+    .this-title{
+        font-size: 10px;
+        font-family: $font;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    ul{
+        display: table;
+        li{
+            float: left;
+            & + li{
+                margin-left: 12px;
+            }
+            a{
+                line-height: 1;
+                padding: 0;
+                i{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }
 
 .carted-product{

@@ -1,29 +1,16 @@
-- fb = Brand.first ? Brand.first.facebook : ""
-- tw = Brand.first ? Brand.first.twitter : ""
-- ln = Brand.first ? Brand.first.linkedin : ""
-
 .dropdown-menu.dropdown-menu-right
-  form.login-form-dropdown action="#" method="post"
-    .input-group
-      input.form-control placeholder=("Username or Email Address") type="text"
-    .input-group
-      input.form-control placeholder="Password" type="password"
-    .buttons-row.mt-0
-      a.btn.btn-outline.btn-sm href="#"  register
-      input.btn.btn-sm.btn-default type="submit" value="login"
-    .contact-with.row.justify-content-between.mx-0.align-items-center
-      h6.this-title.mb-0
-        | Contact With
-      ul.list-unstyled
-        - if tw
-          li
-            a href="#{tw}"
-              i.fab.fa-twitter
-        - if fb
-          li
-            a href="#{fb}"
-              i.fab.fa-facebook
-        - if ln
-          li
-            a href="#{ln}"
-              i.fab.fa-linkedin
+  - if !user_signed_in?
+    = form_tag(user_session_path, class: "login-form-dropdown") do
+      .input-group
+        input.form-control name="user[email]" placeholder="Username or Email Address" type="email"
+      .input-group
+        input.form-control name="user[password]" placeholder="Password" type="password"
+      .form-group.form-check.contact-with.mb-0
+        input#remember_me.form-check-input type="checkbox" name="remember_me"
+        label.form-check-label.this-title for="remember_me" Remember me
+      .buttons-row.mt-0
+        = link_to "Register", new_user_registration_path, class: "btn btn-outline btn-sm"
+        = submit_tag "Login", class: "btn btn-sm btn-default ml-2"
+  - if user_signed_in?
+    = link_to "Sign out", destroy_user_session_path, :method => :delete
+  = render partial: "partials/components/nav/topbar/contact-with"

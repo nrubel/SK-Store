@@ -169,19 +169,19 @@
 			}
 		}
 	}
-	.contact-with{
-		.this-title{
-			color: #959595;
-		}
-		ul{
-			li{
-				a i{
-					color: #959595;
-					@include hfbcd(none,$red,tranparent);
-				}
-			}
-		}
-	}
+}
+.contact-with{
+    .this-title{
+        color: #959595;
+    }
+    ul{
+        li{
+            a i{
+                color: #959595;
+                @include hfbcd(none,$red,tranparent);
+            }
+        }
+    }
 }
 
 .carted-product{
