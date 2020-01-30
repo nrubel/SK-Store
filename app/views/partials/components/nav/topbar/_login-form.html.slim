@@ -11,6 +11,7 @@
       .buttons-row.mt-0
         = link_to "Register", new_user_registration_path, class: "btn btn-outline btn-sm"
         = submit_tag "Login", class: "btn btn-sm btn-default ml-2"
+
   - if user_signed_in?
     = link_to "Sign out", destroy_user_session_path, :method => :delete
   = render partial: "partials/components/nav/topbar/contact-with"
