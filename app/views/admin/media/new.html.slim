@@ -1,0 +1,10 @@
+h1 New Media
+
+= form_with(model: @media, url: admin_media_path, multipart: true, id: "media_upload_form") do |f|
+  .form-group
+    = f.label :media
+    = f.file_field :media, multiple: true
+  = f.submit("Upload")
+
+- if flash[:errors]
+  - flash[:errors].to_json

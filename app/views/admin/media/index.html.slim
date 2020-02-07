@@ -1,0 +1,13 @@
+h1 Media files
+
+.row
+  - @files.each do |file|
+    - file.media.each do |k|
+      .col
+        = image_tag k.variant(resize: "100x100")
+        br
+        = link_to "Delete media", delete_image_attachment_admin_medium_url(k), method: :delete
+
+= link_to "New Media", new_admin_medium_path
+
+= @size if @size
