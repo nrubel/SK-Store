@@ -36,18 +36,6 @@ ActiveRecord::Schema.define(version: 2020_02_06_142025) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "brands", force: :cascade do |t|
-    t.string "title"
-    t.string "phone"
-    t.string "email"
-    t.integer "logo"
-    t.string "facebook"
-    t.string "twitter"
-    t.string "linkedin"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "media_items", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

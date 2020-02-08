@@ -15,5 +15,6 @@ Rails.application.routes.draw do
       end
     end
     resources :users
+    resources :settings
   end
 end

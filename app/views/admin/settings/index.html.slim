@@ -1,0 +1,52 @@
+= content_for :title, "Company Settings"
+= content_for :page_title, "Brand Settings"
+= content_for :page_desc, "Company informations"
+= content_for :page_icon, "pe-7s-magic-wand icon-gradient bg-mixed-hopes"
+
+= @settings.to_json
+
+.card
+  .card-body.py-0
+    ul.list-group.list-group-flush
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Logo
+          .col
+            = @settings.logo
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Title
+          .col
+            = @settings.title
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Phone
+          .col
+            = @settings.phone
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Email
+          .col
+            = @settings.email
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Facebook
+          .col
+            = @settings.facebook
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Twitter
+          .col
+            = @settings.twitter
+      li.list-group-item
+        .row
+          .col-5.col-md-3
+            | Linkedin
+          .col
+            = @settings.linkedin
