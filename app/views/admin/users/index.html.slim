@@ -1,0 +1,19 @@
+.table-responsive
+  table.table.table-sm.table-dark.table-striped
+    caption
+      | List of users, total
+      = @users.length
+    thead
+      tr
+        th scope="col"  #id
+        th scope="col"  Email
+        th scope="col"  Role
+    tbody
+      - @users.sort.each do |u|
+        tr
+          th scope="row"
+            = u.id
+          td
+            = u.email
+          td
+            = u.role
