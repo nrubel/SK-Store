@@ -8,3 +8,6 @@ h1 New Media
 
 - if flash[:errors]
   - flash[:errors].to_json
+
+= 'hello' if current_page?(controller: 'media', action: 'new')
+= controller_name

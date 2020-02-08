@@ -1,20 +1,27 @@
 doctype html
-html
+html lang="en"
   head
-    meta[content="text/html"charset="UTF-8"http-equiv="Content-Type"] /
-    title Sk Store
-    = csrf_meta_tags
-    = csp_meta_tag
-    / google fonts
-    link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" /
-    link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css" /
-    link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css" /
-    link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css" /
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="en" http-equiv="Content-Language" /
+    meta content=("text/html; charset=utf-8") http-equiv="Content-Type" /
+    title
+      = content_for?(:title) ? yield(:title) : "Dashboard"
+      | - SK-Store
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport" /
+    meta content=("This is an example dashboard created using build-in elements and components.") name="description" /
+    meta content="no" name="msapplication-tap-highlight" /
 
     = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
-  body.d-flex.flex-column.min-vh-100
-    = yield
+  body
+    .app-container.app-theme-white.body-tabs-shadow.fixed-sidebar.fixed-header
+      = render partial: "admin/partials/header"
+      .app-main
+        = render partial: "admin/partials/sidebar"
+        .app-main__outer
+          .app-main__inner
+            = render partial: "admin/partials/page-title"
+            = yield
+          = render partial: "admin/partials/footer"
 
-    / js files
-    script src="https://kit.fontawesome.com/799dc280ec.js"
     = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'

@@ -122,7 +122,7 @@ channels.keys().forEach(channels);
 
 /***/ "./app/javascript/packs/admin.js":
 /*!***************************************!*\
-  !*** ./app/javascript/packs/admin.js ***!
+  !*** ./app/javascript/packs/images.js ***!
   \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12574,4 +12574,4 @@ module.exports = function (module) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=admin-c41967a4dddf1fec48e2.js.map
+//# sourceMappingURL=images-c41967a4dddf1fec48e2.js.map
