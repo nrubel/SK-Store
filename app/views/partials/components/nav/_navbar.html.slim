@@ -1,14 +1,16 @@
 - navLeft = Navigation.find_by(name: "Header Left") || 0
 - navRight = Navigation.find_by(name: "Header Right") || 0
 
+- logo = Brand.first.logo.variant(resize: '94x77')
+
 nav.navbar.navbar-expand-lg.navbar-light.bg-white.navigation
   .container
-    a.navbar-brand.d-block.d-lg-none href="#"
-      = image_tag "sk/logo-2.png"
+    = link_to root_path, class: "navbar-brand d-block d-lg-none" do
+      = image_tag logo
     button.navbar-toggler aria-controls="navbarNav" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNav" data-toggle="collapse" type="button"
       span.navbar-toggler-icon
     #navbarNav.collapse.navbar-collapse.main-nav.justify-content-center
       = render partial: "partials/components/nav/navbar-nav", locals: {nav_id: navLeft.id} if navLeft
-      a.navbar-brand.d-none.d-lg-block href="#"
-        = image_tag "sk/logo-2.png"
+      = link_to root_path, class: "navbar-brand d-none d-lg-block" do
+        = image_tag logo
       = render partial: "partials/components/nav/navbar-nav", locals: {nav_id: navRight.id} if navRight

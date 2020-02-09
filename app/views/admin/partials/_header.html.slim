@@ -1,6 +1,7 @@
 .app-header.header-shadow
   .app-header__logo
     .logo-src
+      = image_tag Brand.first.admin_logo.variant(resize: '94x40')
     .header__pane.ml-auto
       div
         button.hamburger.close-sidebar-btn.hamburger--elastic data-class="closed-sidebar" type="button"
@@ -33,8 +34,8 @@
           a.nav-link href="javascript:void(0);"
             i.nav-link-icon.fa.fa-edit
             | Projects
-        li.dropdown.nav-item
-          a.nav-link href="javascript:void(0);"
+        li.btn-group.nav-item
+          = link_to admin_settings_path, class: 'nav-link' do
             i.nav-link-icon.fa.fa-cog
             | Settings
     .app-header-right

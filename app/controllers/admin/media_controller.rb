@@ -23,7 +23,7 @@ class Admin::MediaController < AdminController
     if mediaItems.save
       redirect_to :admin_media
     else
-      flash[:errors] = media.errors.full_messages
+      flash[:errors] = mediaItems.errors.full_messages
       redirect_back fallback_location: :root
     end
   end

@@ -1,12 +1,10 @@
-- phone = Brand.first ? Brand.first.phone : "(+84)155688566"
-- email = Brand.first ? Brand.first.email : "sk@store.com"
-
-ul.top-contact.list-unstyled
-  li
-    a href="tel:#{phone}"
-      = image_tag "sk/icons/top-bar/1.png", alt: phone
-      = phone
-  li
-    a href="mailto:#{email}"
-      = image_tag "sk/icons/top-bar/2.png", alt: email
-      = email
+- if Brand.first
+  ul.top-contact.list-unstyled
+    li
+      a href="tel:#{Brand.first.phone}"
+        = image_tag "sk/icons/top-bar/1.png", alt: Brand.first.phone
+        = Brand.first.phone
+    li
+      a href="mailto:#{Brand.first.email}"
+        = image_tag "sk/icons/top-bar/2.png", alt: Brand.first.email
+        = Brand.first.email

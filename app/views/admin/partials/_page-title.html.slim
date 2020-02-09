@@ -12,34 +12,33 @@
         .page-title-subheading
           = desc
     .page-title-actions
-      button.btn-shadow.mr-3.btn.btn-dark data-original-title=("Example Tooltip") data-placement="bottom" data-toggle="tooltip" title="" type="button"
-        i.fa.fa-star
-      .d-inline-block.dropdown
-        button.btn-shadow.dropdown-toggle.btn.btn-info aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-          span.btn-icon-wrapper.pr-2.opacity-7
-            i.fa.fa-business-time.fa-w-20
-          | Actions
-        .dropdown-menu.dropdown-menu-right aria-hidden="true" role="menu" tabindex="-1"
-          ul.nav.flex-column
-            li.nav-item
-              a.nav-link href="javascript:void(0);"
-                i.nav-link-icon.lnr-inbox
-                span
-                  | Inbox
-              .ml-auto.badge.badge-pill.badge-secondary 86
-            li.nav-item
-              a.nav-link href="javascript:void(0);"
-                i.nav-link-icon.lnr-book
-                span
-                  | Book
-              .ml-auto.badge.badge-pill.badge-danger 5
-            li.nav-item
-              a.nav-link href="javascript:void(0);"
-                i.nav-link-icon.lnr-picture
-                span
-                  | Picture
-            li.nav-item
-              a.nav-link.disabled disabled="" href="javascript:void(0);"
-                i.nav-link-icon.lnr-file-empty
-                span
-                  | File Disabled
+      = yield :icon_action if content_for? :icon_action
+      / .d-inline-block.dropdown
+      /   button.btn-shadow.dropdown-toggle.btn.btn-info aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
+      /     span.btn-icon-wrapper.pr-2.opacity-7
+      /       i.fa.fa-business-time.fa-w-20
+      /     | Actions
+      /   .dropdown-menu.dropdown-menu-right aria-hidden="true" role="menu" tabindex="-1"
+      /     ul.nav.flex-column
+      /       li.nav-item
+      /         a.nav-link href="javascript:void(0);"
+      /           i.nav-link-icon.lnr-inbox
+      /           span
+      /             | Inbox
+      /         .ml-auto.badge.badge-pill.badge-secondary 86
+      /       li.nav-item
+      /         a.nav-link href="javascript:void(0);"
+      /           i.nav-link-icon.lnr-book
+      /           span
+      /             | Book
+      /         .ml-auto.badge.badge-pill.badge-danger 5
+      /       li.nav-item
+      /         a.nav-link href="javascript:void(0);"
+      /           i.nav-link-icon.lnr-picture
+      /           span
+      /             | Picture
+      /       li.nav-item
+      /         a.nav-link.disabled disabled="" href="javascript:void(0);"
+      /           i.nav-link-icon.lnr-file-empty
+      /           span
+      /             | File Disabled

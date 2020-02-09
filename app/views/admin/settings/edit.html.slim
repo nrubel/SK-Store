@@ -1,0 +1,70 @@
+= content_for :title, "Edit Brand information"
+
+- errors = flash[:errors]
+- values = flash[:values]
+- image = flash[:image]
+- formClasses = "needs-validation #{"was-validated" if !errors.nil? && errors.any?}"
+
+= image if image
+
+.card
+  .card-body
+    h2.card-title Create Brand
+    = form_with(model: @brand, url: "#{admin_settings_path}/#{@brand.id}", html: {novalidate: true, class: formClasses, method: 'PATCH'}) do |f|
+      .position-relative.row.form-group
+        = f.label :logo, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          - if @brand.logo.attached?
+            = image_tag @brand.logo.variant(resize: '94x77'), class: "mb-1"
+          = f.file_field :logo, class: "form-control border-0 p-0"
+
+      .position-relative.row.form-group
+        = f.label :admin_logo, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          - if @brand.admin_logo.attached?
+            = image_tag @brand.admin_logo.variant(resize: '90x40'), class: "mb-1"
+          = f.file_field :admin_logo, class: "form-control border-0 p-0"
+          - if !errors.nil? && errors.any? && errors["admin_logo"]
+            .invalid-feedback = errors["admin_logo"]
+
+      .position-relative.row.form-group
+        = f.label :title, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.text_field :title, class: "form-control", required: true
+          - if !errors.nil? && errors.any? && errors["title"]
+            .invalid-feedback = errors["title"][0]
+
+      .position-relative.row.form-group
+        = f.label :phone, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.phone_field :phone, class: "form-control", required: true
+          - if !errors.nil? && errors.any? && errors["phone"]
+            .invalid-feedback = errors["phone"][0]
+
+      .position-relative.row.form-group
+        = f.label :email, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.email_field :email, class: "form-control", required: true
+          - if !errors.nil? && errors.any? && errors["email"]
+            .invalid-feedback = errors["email"][0]
+
+      .position-relative.row.form-group
+        = f.label :facebook, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.url_field :facebook, class: "form-control"
+
+      .position-relative.row.form-group
+        = f.label :twitter, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.url_field :twitter, class: "form-control"
+
+      .position-relative.row.form-group
+        = f.label :linkedin, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.url_field :linkedin, class: "form-control"
+
+      .position-relative.row.form-group
+        .col-sm-2.col-form-label
+        .col-sm-10
+          button.btn.btn-block.btn-primary type="submit"
+            | Create Brand
