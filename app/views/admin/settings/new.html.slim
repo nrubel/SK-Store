@@ -19,6 +19,13 @@
             .invalid-feedback = errors["admin_logo"]
 
       .position-relative.row.form-group
+        = f.label :footer_logo, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.file_field :footer_logo, class: "form-control border-0 p-0"
+          - if !errors.nil? && errors.any? && errors["footer_logo"]
+            .invalid-feedback = errors["footer_logo"]
+
+      .position-relative.row.form-group
         = f.label :title, class: "col-sm-2 col-form-label"
         .col-sm-10
           = f.text_field :title, class: "form-control", required: true, value: new_field_value(values, 'title') if values

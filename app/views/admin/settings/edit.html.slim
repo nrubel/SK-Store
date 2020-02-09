@@ -22,10 +22,19 @@
         = f.label :admin_logo, class: "col-sm-2 col-form-label"
         .col-sm-10
           - if @brand.admin_logo.attached?
-            = image_tag @brand.admin_logo.variant(resize: '90x40'), class: "mb-1"
+            = image_tag @brand.admin_logo.variant(resize: '155x40'), class: "mb-1"
           = f.file_field :admin_logo, class: "form-control border-0 p-0"
           - if !errors.nil? && errors.any? && errors["admin_logo"]
             .invalid-feedback = errors["admin_logo"]
+
+      .position-relative.row.form-group
+        = f.label :footer_logo, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          - if @brand.footer_logo.attached?
+            = image_tag @brand.footer_logo.variant(resize: '155x40'), class: "mb-1"
+          = f.file_field :footer_logo, class: "form-control border-0 p-0"
+          - if !errors.nil? && errors.any? && errors["footer_logo"]
+            .invalid-feedback = errors["footer_logo"]
 
       .position-relative.row.form-group
         = f.label :title, class: "col-sm-2 col-form-label"

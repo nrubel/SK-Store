@@ -32,11 +32,12 @@ class Admin::SettingsController < AdminController
   def update
     brand = Brand.find(params[:id])
     params[:brand].each do |k, v|
-      brand[k] = v if brand[k] != v && k != 'logo' && k != 'admin_logo'
+      brand[k] = v if brand[k] != v && k != 'logo' && k != 'admin_logo' && k != 'footer_logo'
     end
 
     update_logos(brand.logo, 'logo')
     update_logos(brand.admin_logo, 'admin_logo')
+    update_logos(brand.footer_logo, 'footer_logo')
 
     if brand.save
       redirect_to :admin_settings

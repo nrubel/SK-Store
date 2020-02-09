@@ -3,8 +3,8 @@ section.row.copyright-section.mt-auto
     .row
       .col-md-8.copyright-msg
         .row.align-items-center
-          a.foot-logo.mr-3 href="index.html"
-            = image_tag "sk/footer/foot-logo.png"
+          = link_to root_path, class: "foot-logo mr-3" do
+            = image_tag Brand.first.footer_logo.variant(resize: '155x40')
           | &copy; Copyright 2015. Powered by RoR.
       .col-md-4.foot-payment-helper
         .dtable.row.m0
