@@ -15,3 +15,5 @@
 .row
   .col-4.py-3
     = render partial: "admin/settings/brand/view", locals: {brand: @brand}
+  .col-4.py-3
+    = render partial: "admin/settings/navigation/view", locals: {navs: @navs, errors: flash[:nav_errors]}

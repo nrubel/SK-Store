@@ -1,0 +1,24 @@
+- formClasses = "form-inline pt-2 pb-3 needs-validation #{"was-validated" unless errors.nil?}"
+= csrf_meta_tags
+.card
+  .card-header.justify-content-between
+    h3.card-title.mb-0 Navigation List
+  .card-body.py-0
+    ul.list-group.list-group-flush
+      - navs.each do |nav|
+        li.list-group-item.d-flex.px-0
+          = nav.name
+          span.badge.badge-info.ml-1.text-capitalize
+            = nav.menus.count
+            | &nbsp;menu items
+          .ml-auto
+            = link_to "Remove", admin_settings_navigation_path(nav), method: :delete
+
+    = form_with(url: admin_settings_navigation_index_path, class: formClasses) do |n|
+      .col.pl-0
+        = n.text_field :name, placeholder: "Type name", class: "form-control w-100", required: true
+        .invalid-tooltip
+          = errors.as_json
+      button.btn.btn-primary.ml-auto type="submit"
+        | Add New
+
