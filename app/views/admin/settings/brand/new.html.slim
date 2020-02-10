@@ -5,7 +5,7 @@
 .card
   .card-body
     h2.card-title Create Brand
-    = form_with(model: @brand, url: admin_settings_path, html: {novalidate: true, class: formClasses}) do |f|
+    = form_with(model: @brand, url: admin_settings_brand_index_path, html: {novalidate: true, class: formClasses}) do |f|
       .position-relative.row.form-group
         = f.label :logo, class: "col-sm-2 col-form-label"
         .col-sm-10

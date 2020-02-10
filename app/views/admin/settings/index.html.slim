@@ -1,80 +1,81 @@
 = content_for :title, "Company Settings"
-= content_for :page_title, "Brand Settings"
-= content_for :page_desc, "Company informations"
+= content_for :page_title, "Settings"
+= content_for :page_desc, "Frontend setups"
 = content_for :page_icon, "pe-7s-magic-wand icon-gradient bg-mixed-hopes"
 
-= content_for :icon_action do
-  = link_to edit_admin_setting_path(@settings),
-          class: "btn-shadow mr-3 btn btn-primary",
-          style: "font-size: 20px",
-          :"data-original-title" => "Edit information",
-          :"data-placement" => "bottom",
-          :"data-toggle" => "tooltip" do
-    i.pe-7s-edit
+/ = content_for :icon_action do
+/   = link_to edit_admin_settings_brand_path(@brand),
+/           class: "btn-shadow mr-3 btn btn-primary",
+/           style: "font-size: 20px",
+/           :"data-original-title" => "Edit information",
+/           :"data-placement" => "bottom",
+/           :"data-toggle" => "tooltip" do
+/     i.pe-7s-edit
 
-- if @settings
-  .card.mb-5
-    .card-body.py-0
-      ul.list-group.list-group-flush
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize logo
-            - if @settings.logo.attached?
-              .col = image_tag @settings.logo.variant(resize: '94x77')
+.row
+  .col-4
+    .card.my-3
+      .card-header.justify-content-between
+        h3.card-title.mb-0 Company Basic information
+        = link_to "Edit Brand information",
+                edit_admin_settings_brand_path(@brand),
+                class: "btn btn-outline-primary"
+      .card-body.py-0
+        - if @brand
+          ul.list-group.list-group-flush
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize logo
+                - if @brand.logo.attached?
+                  .col = image_tag @brand.logo.variant(resize: '94x77')
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize admin logo
-            - if @settings.admin_logo.attached?
-              .col = image_tag @settings.admin_logo.variant(resize: '155x40')
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize admin logo
+                - if @brand.admin_logo.attached?
+                  .col = image_tag @brand.admin_logo.variant(resize: '155x40')
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize footer logo
-            - if @settings.footer_logo.attached?
-              .col = image_tag @settings.footer_logo.variant(resize: '155x40')
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize footer logo
+                - if @brand.footer_logo.attached?
+                  .col = image_tag @brand.footer_logo.variant(resize: '155x40')
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize title
-            - if @settings.title
-              .col = @settings.title
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize title
+                - if @brand.title
+                  .col = @brand.title
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize phone
-            - if @settings.phone
-              .col = @settings.phone
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize phone
+                - if @brand.phone
+                  .col = @brand.phone
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize email
-            - if @settings.email
-              .col = @settings.email
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize email
+                - if @brand.email
+                  .col = @brand.email
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize facebook
-            - if @settings.facebook
-              .col = @settings.facebook
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize facebook
+                - if @brand.facebook
+                  .col = @brand.facebook
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize twitter
-            - if @settings.twitter
-              .col = @settings.twitter
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize twitter
+                - if @brand.twitter
+                  .col = @brand.twitter
 
-        li.list-group-item
-          .row.align-items-center
-            .col-5.col-md-3.text-capitalize linkedin
-            - if @settings.linkedin
-              .col = @settings.linkedin
+            li.list-group-item
+              .row.align-items-center
+                .col-5.col-md-3.text-capitalize linkedin
+                - if @brand.linkedin
+                  .col = @brand.linkedin
 
-        li.list-group-item
-          .row.align-items-center
-            .col = link_to "Edit Brand information",
-                    edit_admin_setting_path(@settings),
-                    class: "btn btn-outline-primary"
-
-- if !@settings
-  = link_to "Create Brand", new_admin_setting_path, class: "btn btn-alternate"
+- if !@brand
+  = link_to "Create Brand", new_admin_settings_brand_path, class: "btn btn-alternate"
