@@ -1,6 +1,4 @@
 - icon = content_for?(:page_icon) ? yield(:page_icon) : 'pe-7s-plane icon-gradient bg-tempting-azure'
-- title = content_for?(:page_title) ? yield(:page_title) : "Standard Buttons"
-- desc = content_for?(:page_desc) ? yield(:page_desc) : "Wide selection of buttons that feature different styles for backgrounds, borders and hover options!"
 
 .app-page-title
   .page-title-wrapper
@@ -8,37 +6,10 @@
       .page-title-icon
         i class=icon
       div
-        = title
-        .page-title-subheading
-          = desc
+        = yield(:page_title) if content_for?(:page_icon)
+        - if content_for?(:page_desc)
+          .page-title-subheading
+            = yield(:page_desc)
     .page-title-actions
       = yield :icon_action if content_for? :icon_action
-      / .d-inline-block.dropdown
-      /   button.btn-shadow.dropdown-toggle.btn.btn-info aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-      /     span.btn-icon-wrapper.pr-2.opacity-7
-      /       i.fa.fa-business-time.fa-w-20
-      /     | Actions
-      /   .dropdown-menu.dropdown-menu-right aria-hidden="true" role="menu" tabindex="-1"
-      /     ul.nav.flex-column
-      /       li.nav-item
-      /         a.nav-link href="javascript:void(0);"
-      /           i.nav-link-icon.lnr-inbox
-      /           span
-      /             | Inbox
-      /         .ml-auto.badge.badge-pill.badge-secondary 86
-      /       li.nav-item
-      /         a.nav-link href="javascript:void(0);"
-      /           i.nav-link-icon.lnr-book
-      /           span
-      /             | Book
-      /         .ml-auto.badge.badge-pill.badge-danger 5
-      /       li.nav-item
-      /         a.nav-link href="javascript:void(0);"
-      /           i.nav-link-icon.lnr-picture
-      /           span
-      /             | Picture
-      /       li.nav-item
-      /         a.nav-link.disabled disabled="" href="javascript:void(0);"
-      /           i.nav-link-icon.lnr-file-empty
-      /           span
-      /             | File Disabled
+      = yield :button_action if content_for? :button_action

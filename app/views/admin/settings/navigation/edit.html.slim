@@ -1,0 +1,19 @@
+= content_for :page_title do
+  span
+    | Edit :&nbsp;
+    = @nav.name
+  / = link_to "Rename", edit_admin_settings_navigation_path(@nav)
+= content_for :page_icon, "pe-7s-menu icon-gradient bg-ripe-malin"
+
+.row
+  .col-4
+    .card
+      .card-body
+        = form_with model: @nav,
+                url: "#{admin_settings_navigation_path}",
+                html: {novalidate: true, method: 'PATCH'} do |f|
+          = f.text_field :name, class: "form-control", required: true
+          - if flash[:errors]
+            .invalid-feedback.d-flex
+              = flash[:errors]
+          = f.submit "Update", class: "btn btn-block btn-primary mt-2"

@@ -1,0 +1,11 @@
+= content_for :page_title do
+  span
+    | Navigation:&nbsp;
+    = @nav.name
+  = link_to "Rename", edit_admin_settings_navigation_path(@nav), class: "btn btn-sm ml-5 btn-primary"
+
+= content_for :page_icon, "pe-7s-menu icon-gradient bg-ripe-malin"
+.row
+  .col-6.pt-2
+    .card
+      .card-body
