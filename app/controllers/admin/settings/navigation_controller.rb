@@ -5,7 +5,7 @@ class Admin::Settings::NavigationController < AdminController
     nav.name = params[:name]
 
     if nav.save
-      goBack
+      redirect_to :admin_settings
     else
       flash[:nav_errors] = nav.errors.full_messages.first
       goBack

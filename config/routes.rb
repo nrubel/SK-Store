@@ -17,7 +17,11 @@ Rails.application.routes.draw do
     resources :users
     resources :settings, only: :index
     namespace :settings do
-      resources :brand, only: [:new, :edit, :create, :update]
+      resources :brand do
+        member do
+          delete :delete_image_attachment
+        end
+      end
       resources :navigation, only: [:create, :update, :destroy]
       resources :menu, only: [:new, :edit, :create, :update, :destroy]
     end

@@ -1,0 +1,10 @@
+section.row.client-logos.text-center.mt-auto
+  .container
+    .row
+      - Brand.first.clients_logo.each do |c|
+        .col-xs-4.col-sm-2.client-logo
+          a href="#"
+            .nr
+              = image_tag url_for(c.variant(colorspace: 'Gray'))
+            .hf
+              =image_tag url_for(c)

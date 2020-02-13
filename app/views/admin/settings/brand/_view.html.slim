@@ -24,6 +24,21 @@
 
         li.list-group-item
           .row.align-items-center
+            .col-5.col-md-3.text-capitalize clients logo
+            .col
+              .row.align-items-end.mx-0
+                - if brand.clients_logo.attached?
+                  - brand.clients_logo.each do |c|
+                    div
+                      = image_tag c, class: "mr-2"
+                      br
+                      = link_to "remove",
+                              delete_image_attachment_admin_settings_brand_path(c),
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' }
+
+        li.list-group-item
+          .row.align-items-center
             .col-5.col-md-3.text-capitalize footer logo
             - if brand.footer_logo.attached?
               .col = image_tag brand.footer_logo.variant(resize: '155x40')
@@ -63,3 +78,9 @@
             .col-5.col-md-3.text-capitalize linkedin
             - if brand.linkedin
               .col = brand.linkedin
+
+        li.list-group-item
+          .row.align-items-center
+            .col-5.col-md-3.text-capitalize address
+            - if brand.address
+              .col = brand.address

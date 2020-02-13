@@ -28,12 +28,13 @@ class Admin::Settings::BrandController < AdminController
   def update
     brand = Brand.find(params[:id])
     params[:brand].each do |k, v|
-      brand[k] = v if brand[k] != v && k != 'logo' && k != 'admin_logo' && k != 'footer_logo'
+      brand[k] = v if brand[k] != v && k != 'logo' && k != 'admin_logo' && k != 'footer_logo' && k != "clients_logo"
     end
 
     update_logos(brand.logo, 'logo')
     update_logos(brand.admin_logo, 'admin_logo')
     update_logos(brand.footer_logo, 'footer_logo')
+    update_logos(brand.clients_logo, 'clients_logo')
 
     if brand.save
       redirect_to :admin_settings
@@ -44,10 +45,16 @@ class Admin::Settings::BrandController < AdminController
     end
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_to :admin_settings
+  end
+
 
   private
   def brand_params
-    params.require(:brand).permit(:title, :phone, :email, :logo, :admin_logo)
+    params.require(:brand).permit(:title, :phone, :email, :logo, :admin_logo, :clients_logo)
   end
 
   def image_resizing(attachment, size = '94x77')

@@ -10,7 +10,7 @@
 .card
   .card-body
     h2.card-title Create Brand
-    = form_with(model: @brand, url: "#{admin_settings_brand_path}", html: {novalidate: true, class: formClasses, method: 'PATCH'}) do |f|
+    = form_with(model: @brand, url: "#{admin_settings_brand_path}", html: {novalidate: true, class: formClasses, method: 'PATCH', multipart: true}) do |f|
       .position-relative.row.form-group
         = f.label :logo, class: "col-sm-2 col-form-label"
         .col-sm-10
@@ -26,6 +26,15 @@
           = f.file_field :admin_logo, class: "form-control border-0 p-0"
           - if !errors.nil? && errors.any? && errors["admin_logo"]
             .invalid-feedback = errors["admin_logo"]
+
+      .position-relative.row.form-group
+        = f.label :clients_logo, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          - if @brand.clients_logo.attached?
+            = image_tag @brand.clients_logo.variant(resize: '155x40'), class: "mb-1"
+          = f.file_field :clients_logo, class: "form-control border-0 p-0", multiple: true
+          - if !errors.nil? && errors.any? && errors["clients_logo"]
+            .invalid-feedback = errors["clients_logo"]
 
       .position-relative.row.form-group
         = f.label :footer_logo, class: "col-sm-2 col-form-label"
@@ -71,6 +80,11 @@
         = f.label :linkedin, class: "col-sm-2 col-form-label"
         .col-sm-10
           = f.url_field :linkedin, class: "form-control"
+
+      .position-relative.row.form-group
+        = f.label :address, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.url_field :address, class: "form-control"
 
       .position-relative.row.form-group
         .col-sm-2.col-form-label

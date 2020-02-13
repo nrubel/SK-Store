@@ -62,6 +62,11 @@
           = f.url_field :linkedin, class: "form-control", value: new_field_value(values, 'linkedin') if values
 
       .position-relative.row.form-group
+        = f.label :address, class: "col-sm-2 col-form-label"
+        .col-sm-10
+          = f.url_field :address, class: "form-control", value: new_field_value(values, 'address') if values
+
+      .position-relative.row.form-group
         .col-sm-2.col-form-label
         .col-sm-10
           button.btn.btn-block.btn-primary type="submit"
