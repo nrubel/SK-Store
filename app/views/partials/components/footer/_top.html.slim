@@ -1,0 +1,53 @@
+footer.row.site-footer.mt-auto
+  .container
+    .footer-sidebar.row
+      .widget.footer-widget.col-3
+        h4.widget-title Information
+        ul.nav.foot-nav.flex-column
+          li
+            a href="#"  About us
+          li
+            a href="#"  Our stores
+          li
+            a href="#"  My account
+          li
+            a href="#"  Order history
+          li
+            a href="#"  Specials info
+      .widget.footer-widget.col-3
+        h4.widget-title My Account
+        ul.nav.foot-nav.flex-column
+          li
+            a href="#"  My orders
+          li
+            a href="#"  My credit
+          li
+            a href="#"  My wishlist
+          li
+            a href="#"  Personal info
+          li
+            a href="#"  Login
+      .widget.footer-widget.col-3
+        h4.widget-title Customer
+        ul.nav.foot-nav.flex-column
+          li
+            a href="#"  Help and FAQ
+          li
+            a href="#"  Order and returns
+          li
+            a href="#"  Shipping info
+          li
+            a href="#"  Search terms
+          li
+            a href="#"  Store location
+      .widget.footer-widget.widget-contact.col-3
+        h4.widget-title Contact
+        address.footer-address
+          | PO Box CT16122 Collins Street West, Victoria 8007, Australia.
+          br
+          br
+          | Phone:
+          = link_to Brand.first.phone, "tel:#{Brand.first.phone}"
+          br
+          | Email:
+          = link_to Brand.first.email, "mailto:#{Brand.first.email}"
