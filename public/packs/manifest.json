@@ -1,6 +1,6 @@
 {
-  "admin-custom.js": "/packs/js/admin-custom-100c7c9db99a89317bc6.js",
-  "admin-custom.js.map": "/packs/js/admin-custom-100c7c9db99a89317bc6.js.map",
+  "admin-custom.js": "/packs/js/admin-custom-5e58432d26fe1c136101.js",
+  "admin-custom.js.map": "/packs/js/admin-custom-5e58432d26fe1c136101.js.map",
   "admin-theme.js": "/packs/js/admin-theme-815cadafb0afd88492bc.js",
   "admin-theme.js.map": "/packs/js/admin-theme-815cadafb0afd88492bc.js.map",
   "admin.js": "/packs/js/admin-ab8c4cd6ddbd7bafcffb.js",
@@ -10,10 +10,10 @@
   "entrypoints": {
     "admin-custom": {
       "js": [
-        "/packs/js/admin-custom-100c7c9db99a89317bc6.js"
+        "/packs/js/admin-custom-5e58432d26fe1c136101.js"
       ],
       "js.map": [
-        "/packs/js/admin-custom-100c7c9db99a89317bc6.js.map"
+        "/packs/js/admin-custom-5e58432d26fe1c136101.js.map"
       ]
     },
     "admin-theme": {

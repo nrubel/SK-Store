@@ -34,8 +34,4 @@ class Admin::Settings::NavigationController < AdminController
   def nav_params
     params.permit(:name)
   end
-
-  def goBack
-    redirect_back fallback_location: admin_settings_path
-  end
 end

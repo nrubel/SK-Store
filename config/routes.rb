@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     namespace :settings do
       resources :brand, only: [:new, :edit, :create, :update]
       resources :navigation, only: [:create, :update, :destroy]
+      resources :menu, only: [:new, :edit, :create, :update, :destroy]
     end
   end
 end

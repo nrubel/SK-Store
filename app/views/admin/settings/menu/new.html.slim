@@ -1,0 +1,8 @@
+= content_for :page_title do
+  span Create new Menu item
+= content_for :page_icon, "pe-7s-menu icon-gradient bg-ripe-malin"
+
+- errors = flash[:errors]
+
+= render partial: "admin/settings/menu/create",
+        locals: {menu: @menu, submit_text: "Add New", errors: errors, url_to: admin_settings_menu_index_path}

@@ -1,0 +1,44 @@
+- formClasses = "pt-2 pb-3 needs-validation #{"was-validated" unless errors.nil?}"
+
+.row.mb-5
+  .col-6
+    .card
+      .card-header.justify-content-between
+        h3.card-title.mb-0 Create Menu item
+      .card-body.py-0
+        = form_with(model: menu, url: url_for, class: formClasses) do |n|
+          .row
+            .col-12.form-group.mb-3
+              = n.label :name
+              = n.text_field :name, placeholder: "Type name", class: "form-control w-100", required: true
+              .invalid-tooltip
+                = errors.as_json
+            .col-6.form-group.mb-3
+              = n.label :route
+              = n.text_field :route, placeholder: "link or path", class: "form-control w-100", required: true
+              .invalid-tooltip
+                = errors.as_json
+            .col-6.form-group.mb-3
+              = n.label :position
+              = n.text_field :position, placeholder: "Type name", class: "form-control w-100"
+              .invalid-tooltip
+                = errors.as_json
+            .col-6.form-group.mb-3
+              = n.label :parent
+              = n.select :parent,
+                      Menu.all.collect { |p| [p.name, p.id] },
+                      {include_blank: 'Select parent if has'},
+                      {class: "form-control w-100"}
+              .invalid-tooltip
+                = errors.as_json
+            .col-6.form-group.mb-3
+              = n.label :navigation_id
+              = n.select :navigation_id,
+                      Navigation.all.collect { |p| [ p.name, p.id ] },
+                      {},
+                      {class: "form-control w-100"}
+              .invalid-tooltip
+                = errors.as_json
+
+          button.btn.btn-success.btn-block.ml-auto type="submit"
+            = submit_text
