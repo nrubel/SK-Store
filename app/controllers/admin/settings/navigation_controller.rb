@@ -32,11 +32,11 @@ class Admin::Settings::NavigationController < AdminController
     end
   end
 
-  # def destroy
-  #   nav = Navigation.find(params[:id])
-  #   nav.destroy if nav
-  #   goBack
-  # end
+  def destroy
+    nav = Navigation.find(params[:id])
+    nav.destroy if nav
+    redirect_to admin_settings_path
+  end
 
   private
   def nav_params

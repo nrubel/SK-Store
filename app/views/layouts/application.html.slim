@@ -12,6 +12,8 @@ html
     link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css" /
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
   body.d-flex.flex-column.min-vh-100
     = render partial: "partials/header"
     = yield
@@ -19,4 +21,3 @@ html
 
     / js files
     script src="https://kit.fontawesome.com/799dc280ec.js"
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
