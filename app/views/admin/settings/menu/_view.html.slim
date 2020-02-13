@@ -2,27 +2,25 @@
   .card-header.justify-content-between
     h3.card-title.mb-0 Menu List
     = link_to "Create new Menu", new_admin_settings_menu_path, class: "btn btn-primary"
-  .card-body.py-0
-    table.table
+  .card-body
+    table.table.mb-0
       thead
         tr
-          th #ID
           th Name
           th Route
           th Position
           th Parent
           th Assigned to
-          th Actions
+          th.text-right Actions
       tbody
         - menus.each do |menu|
           tr
-            td = menu.id
             td = menu.name
             td = menu.route
             td = menu.position
             td = menu.parent
             td = menu.navigation.name
-            td
+            td.text-right
               .btn-group
                 = link_to "Edit", edit_admin_settings_menu_path(menu), class: "btn btn-info"
                 = link_to "Delete", admin_settings_menu_path(menu), method: :delete, class: "btn btn-danger"

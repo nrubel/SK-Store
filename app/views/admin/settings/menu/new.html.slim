@@ -4,5 +4,5 @@
 
 - errors = flash[:errors]
 
-= render partial: "admin/settings/menu/create",
+= render partial: "admin/form",
         locals: {menu: @menu, submit_text: "Add New", errors: errors, url_to: admin_settings_menu_index_path}
