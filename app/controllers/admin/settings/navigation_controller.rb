@@ -1,13 +1,5 @@
 class Admin::Settings::NavigationController < AdminController
 
-  def show
-    @nav = Navigation.find(params[:id])
-  end
-
-  def edit
-    @nav = Navigation.find(params[:id])
-  end
-
   def create
     nav = Navigation.new(nav_params)
     nav.name = params[:name]
@@ -22,7 +14,7 @@ class Admin::Settings::NavigationController < AdminController
 
   def update
     nav = Navigation.find(params[:id])
-    nam = params[:navigation][:name]
+    nam = params[:name]
     if !nam.nil?
       nav.update! name: nam
       redirect_to admin_settings_path

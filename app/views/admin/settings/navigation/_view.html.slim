@@ -6,17 +6,27 @@
   .card-body.py-0
     ul.list-group.list-group-flush
       - navs.each do |nav|
-        li.list-group-item.d-flex.px-0.align-items-center
-          = nav.name
-          span.badge.badge-info.ml-1.text-capitalize
-            = nav.menus.count
-            | &nbsp;menu items
-          = link_to 'View', admin_settings_navigation_path(nav), class: 'ml-auto btn btn-sm btn-secondary'
+        li.list-group-item.d-flex.px-0.align-items-center.admin-nav-list-item
+          = form_with(url: admin_settings_navigation_path(nav), class: "form-inline w-100") do |item|
+            input name="_method" type="hidden" value="patch"
+            = item.text_field :name,
+                    value: nav.name,
+                    class: "form-control h-auto line-height-1 bg-transparent nav-item-field nav-item-field-#{nav.id}",
+                    id: "update-nav-name-#{nav.id}"
+
+
+            span.badge.badge-info.ml-1.text-capitalize
+              = pluralize( nav.menus.count, 'menu item' )
+            = item.submit "Rename", class: "ml-auto btn btn-sm btn-warning"
+          - if nav.menus.count == 0
+            = link_to "Remove", admin_settings_navigation_path(nav),
+                    data: {method: :delete},
+                    class: "btn btn-sm ml-2 btn-danger"
 
     = form_with(url: admin_settings_navigation_index_path, class: formClasses) do |n|
       .col.pl-0
         = n.text_field :name, placeholder: "Type name", class: "form-control w-100", required: true
         .invalid-tooltip
           = errors.as_json
-      button.btn.btn-primary.ml-auto type="submit"
+      button.btn.btn-success.ml-auto type="submit"
         | Add New
