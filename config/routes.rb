@@ -27,5 +27,7 @@ Rails.application.routes.draw do
       resources :menu, only: [:new, :edit, :create, :update, :destroy]
     end
     resources :products
+    resources :categories
+    resources :attribute
   end
 end

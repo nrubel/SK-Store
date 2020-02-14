@@ -1,0 +1,27 @@
+- isProducts = is_active_page?(admin_products_path)
+- isNewProduct = is_active_page?(new_admin_product_path)
+- isCategories = is_active_page?(admin_categories_path)
+- isAttributes = is_active_page?(admin_attribute_index_path)
+
+li class="#{isProducts || isCategories || isAttributes}"
+  = link_to '#'
+    i.metismenu-icon.pe-7s-shopbag
+    | Products
+    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+  ul
+    li
+      = link_to admin_products_path, class: isProducts do
+        i.metismenu-icon.pe-7s-video
+        | All Products
+    li
+      = link_to new_admin_product_path, class: isNewProduct do
+        i.metismenu-icon.pe-7s-file
+        | Add New
+    li
+      = link_to admin_attribute_index_path, class: isAttributes do
+        i.metismenu-icon.pe-7s-file
+        | Attributes
+    li
+      = link_to admin_categories_path, class: isCategories do
+        i.metismenu-icon.pe-7s-file
+        | Categories
