@@ -1,0 +1,23 @@
+- isDash = is_active_page?(admin_index_path)
+- isMediaAll = is_active_page?(admin_media_path)
+- isMediaNew = is_active_page?(new_admin_medium_path)
+
+li.app-sidebar__heading Welcome
+li
+  = link_to admin_index_path, class: isDash do
+    i.metismenu-icon.pe-7s-rocket
+    | Dashboard
+li class="#{isMediaAll || isMediaNew}"
+  = link_to '#'
+    i.metismenu-icon.pe-7s-diamond
+    | Media
+    i.metismenu-state-icon.pe-7s-angle-down.caret-left
+  ul
+    li
+      = link_to admin_media_path, class: isMediaAll do
+        i.metismenu-icon.pe-7s-video
+        | All Media
+    li
+      = link_to new_admin_medium_path, class: isMediaNew do
+        i.metismenu-icon.pe-7s-file
+        | Add New

@@ -3,19 +3,21 @@
 = content_for :page_desc, "Frontend setups"
 = content_for :page_icon, "pe-7s-magic-wand icon-gradient bg-mixed-hopes"
 
-/ = content_for :icon_action do
-/   = link_to edit_admin_settings_brand_path(@brand),
-/           class: "btn-shadow mr-3 btn btn-primary",
-/           style: "font-size: 20px",
-/           :"data-original-title" => "Edit information",
-/           :"data-placement" => "bottom",
-/           :"data-toggle" => "tooltip" do
-/     i.pe-7s-edit
+ul.body-tabs.body-tabs-layout.tabs-animated.body-tabs-animated.nav
+  li.nav-item
+    a#tab-1.nav-link.active data-toggle="tab" href="#tab-content-1" role="tab"
+      span Brand Settings
+  li.nav-item
+    a#tab-2.nav-link data-toggle="tab" href="#tab-content-2" role="tab"
+      span Navigation Settings
+  li.nav-item
+    a#tab-3.nav-link data-toggle="tab" href="#tab-content-3" role="tab"
+      span Menu Settings
 
-.row
-  .col-6.py-3
+.tab-content
+  #tab-content-1.tab-pane.tabs-animation.fade.show.active role="tabpanel"
     = render partial: "admin/settings/brand/view", locals: {brand: @brand}
-  .col-6.py-3
+  #tab-content-2.tab-pane.tabs-animation.fade role="tabpanel"
     = render partial: "admin/settings/navigation/view", locals: {navs: @navs, errors: flash[:nav_errors]}
-  .col-12.py-3
+  #tab-content-3.tab-pane.tabs-animation.fade role="tabpanel"
     = render partial: "admin/settings/menu/view", locals: {menus: @menus}
