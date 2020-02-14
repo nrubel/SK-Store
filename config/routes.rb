@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
 
   root "home#index"
+  resources :shop, only: [:index, :show]
 
   resources :admin, only: :index
   namespace :admin do
@@ -25,5 +26,6 @@ Rails.application.routes.draw do
       resources :navigation, only: [:create, :update, :destroy]
       resources :menu, only: [:new, :edit, :create, :update, :destroy]
     end
+    resources :products
   end
 end

@@ -5,8 +5,8 @@
   "admin-theme.js.map": "/packs/js/admin-theme-815cadafb0afd88492bc.js.map",
   "admin.js": "/packs/js/admin-ab8c4cd6ddbd7bafcffb.js",
   "admin.js.map": "/packs/js/admin-ab8c4cd6ddbd7bafcffb.js.map",
-  "application.js": "/packs/js/application-4caad993792a7daac668.js",
-  "application.js.map": "/packs/js/application-4caad993792a7daac668.js.map",
+  "application.js": "/packs/js/application-4e48b74e547a0df71674.js",
+  "application.js.map": "/packs/js/application-4e48b74e547a0df71674.js.map",
   "entrypoints": {
     "admin-custom": {
       "js": [
@@ -34,10 +34,18 @@
     },
     "application": {
       "js": [
-        "/packs/js/application-4caad993792a7daac668.js"
+        "/packs/js/application-4e48b74e547a0df71674.js"
       ],
       "js.map": [
-        "/packs/js/application-4caad993792a7daac668.js.map"
+        "/packs/js/application-4e48b74e547a0df71674.js.map"
+      ]
+    },
+    "server_rendering": {
+      "js": [
+        "/packs/js/server_rendering-d18de160af3deebe86f5.js"
+      ],
+      "js.map": [
+        "/packs/js/server_rendering-d18de160af3deebe86f5.js.map"
       ]
     },
     "theme": {
@@ -49,6 +57,8 @@
       ]
     }
   },
+  "server_rendering.js": "/packs/js/server_rendering-d18de160af3deebe86f5.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-d18de160af3deebe86f5.js.map",
   "theme.js": "/packs/js/theme-43ab0945a16b8b308a14.js",
   "theme.js.map": "/packs/js/theme-43ab0945a16b8b308a14.js.map"
 }
