@@ -1,0 +1,16 @@
+= content_for :title, "Create new attribute"
+= content_for :page_title, "Create new attribute"
+= content_for :page_icon, "pe-7s-magic-wand icon-gradient bg-mixed-hopes"
+= content_for :button_action do
+  = link_to "All Attributes", admin_attribute_index_path, class: "btn btn-primary"
+
+.row
+  .col-6.py-3
+    .card
+      .card-body
+        = form_with(model: @attribute, url: admin_attribute_index_path) do |f|
+          .form-group
+            = f.label :name, "Title"
+            = f.text_field :name, class: "form-control"
+          / = react_component("AttributeValuesItem", { attr: "attribute", aKey: :values })
+          = f.submit "Create New"
