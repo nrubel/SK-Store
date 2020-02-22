@@ -2,7 +2,41 @@
 = content_for :page_title, "Attributes List"
 = content_for :page_desc, "Product attributes sets listed here"
 = content_for :page_icon, "pe-7s-magic-wand icon-gradient bg-mixed-hopes"
-= content_for :button_action do
-  = link_to "Add New", new_admin_attribute_path, class: "btn btn-primary"
+/ = content_for :button_action do
+/   = link_to "Add New", new_admin_attribute_path, class: "btn btn-primary"
 
-| hello Attributes
+table.table.bg-white
+  thead
+    tr
+      th style="width: 40px" ID
+      th Name
+      th Values
+      th.text-right Actions
+  tbody
+    - @attributes.each do |attr|
+      tr
+        td.text-right = attr.id
+        td = attr.name
+        td
+          - if !attr.values.nil?
+            .btn-toolbar
+              - attr.values.each do |v|
+                .btn-group.m-2 role="group"
+                  span.btn.btn-info = v['label']
+                  span.btn.btn-outline-info = v['value']
+
+
+        td.text-right
+          = link_to "Show Details", admin_attribute_path(attr), class: 'btn btn-link'
+          = link_to "Delete Attribute", admin_attribute_path(attr), method: :delete, class: 'btn btn-link text-danger'
+
+= form_with model: @attribute, url: admin_attribute_index_path, class: '' do |a|
+  .input-group
+    .input-group-prepend
+      .input-group-text
+        | Add New Attribute on the list
+    = a.text_field :name, class: 'form-control', placeholder: 'Attribute name'
+    .input-group-append
+      = a.submit "Add New", class: 'btn btn-outline-secondary'
+
+  p.text-danger = flash[:errors][0].as_json if flash[:errors]

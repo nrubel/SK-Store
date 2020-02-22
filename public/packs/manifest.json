@@ -1,19 +1,19 @@
 {
-  "admin-custom.js": "/packs/js/admin-custom-d95990cbfc564c540f3f.js",
-  "admin-custom.js.map": "/packs/js/admin-custom-d95990cbfc564c540f3f.js.map",
+  "admin-custom.js": "/packs/js/admin-custom-5e58432d26fe1c136101.js",
+  "admin-custom.js.map": "/packs/js/admin-custom-5e58432d26fe1c136101.js.map",
   "admin-theme.js": "/packs/js/admin-theme-7271c4727c6a1e8ffa07.js",
   "admin-theme.js.map": "/packs/js/admin-theme-7271c4727c6a1e8ffa07.js.map",
-  "admin.js": "/packs/js/admin-052a6e314e92bd269ba6.js",
-  "admin.js.map": "/packs/js/admin-052a6e314e92bd269ba6.js.map",
-  "application.js": "/packs/js/application-bf47afb4fb61853be038.js",
-  "application.js.map": "/packs/js/application-bf47afb4fb61853be038.js.map",
+  "admin.js": "/packs/js/admin-d1a38659d0386032a16b.js",
+  "admin.js.map": "/packs/js/admin-d1a38659d0386032a16b.js.map",
+  "application.js": "/packs/js/application-b309883bd26f6d6a4dff.js",
+  "application.js.map": "/packs/js/application-b309883bd26f6d6a4dff.js.map",
   "entrypoints": {
     "admin-custom": {
       "js": [
-        "/packs/js/admin-custom-d95990cbfc564c540f3f.js"
+        "/packs/js/admin-custom-5e58432d26fe1c136101.js"
       ],
       "js.map": [
-        "/packs/js/admin-custom-d95990cbfc564c540f3f.js.map"
+        "/packs/js/admin-custom-5e58432d26fe1c136101.js.map"
       ]
     },
     "admin-theme": {
@@ -26,39 +26,29 @@
     },
     "admin": {
       "js": [
-        "/packs/js/admin-052a6e314e92bd269ba6.js"
+        "/packs/js/admin-d1a38659d0386032a16b.js"
       ],
       "js.map": [
-        "/packs/js/admin-052a6e314e92bd269ba6.js.map"
+        "/packs/js/admin-d1a38659d0386032a16b.js.map"
       ]
     },
     "application": {
       "js": [
-        "/packs/js/application-bf47afb4fb61853be038.js"
+        "/packs/js/application-b309883bd26f6d6a4dff.js"
       ],
       "js.map": [
-        "/packs/js/application-bf47afb4fb61853be038.js.map"
-      ]
-    },
-    "server_rendering": {
-      "js": [
-        "/packs/js/server_rendering-7a2ee83b3bf2df02e888.js"
-      ],
-      "js.map": [
-        "/packs/js/server_rendering-7a2ee83b3bf2df02e888.js.map"
+        "/packs/js/application-b309883bd26f6d6a4dff.js.map"
       ]
     },
     "theme": {
       "js": [
-        "/packs/js/theme-6b7deccb2bf8cb07c07c.js"
+        "/packs/js/theme-43ab0945a16b8b308a14.js"
       ],
       "js.map": [
-        "/packs/js/theme-6b7deccb2bf8cb07c07c.js.map"
+        "/packs/js/theme-43ab0945a16b8b308a14.js.map"
       ]
     }
   },
-  "server_rendering.js": "/packs/js/server_rendering-7a2ee83b3bf2df02e888.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-7a2ee83b3bf2df02e888.js.map",
-  "theme.js": "/packs/js/theme-6b7deccb2bf8cb07c07c.js",
-  "theme.js.map": "/packs/js/theme-6b7deccb2bf8cb07c07c.js.map"
+  "theme.js": "/packs/js/theme-43ab0945a16b8b308a14.js",
+  "theme.js.map": "/packs/js/theme-43ab0945a16b8b308a14.js.map"
 }

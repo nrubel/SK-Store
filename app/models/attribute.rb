@@ -1,3 +1,3 @@
 class Attribute < ApplicationRecord
-  validates :name, :values, presence: true
+  validates :name, presence: true
 end

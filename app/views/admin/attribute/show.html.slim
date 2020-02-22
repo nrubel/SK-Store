@@ -1,0 +1,48 @@
+- name = @attribute.name
+- values = @attribute.values
+
+= content_for :title, "Attribute details for: #{name}"
+= content_for :page_title, "Attribute: #{name}"
+= content_for :page_desc, "Product attribute #{name} details and edit"
+= content_for :page_icon, "pe-7s-magic-wand icon-gradient bg-mixed-hopes"
+
+.card
+  .card-header
+    = form_with model: @attribute, url: admin_attribute_path do |a|
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            | Rename attribute name
+        = a.text_field :name, class: 'form-control', placeholder: 'Attribute name'
+        .input-group-append
+          = a.submit "Update", class: 'btn btn-outline-secondary'
+  .card-body
+    h3 Attribute values
+    table.table
+      thead
+        tr
+          th Label
+          th Value
+          th Actions
+      tbody
+        - !values.nil? && values.each do |v|
+          tr
+            td = v['label']
+            td = v['value']
+            td
+              = form_with model: @attribute, url: admin_attribute_path do |a|
+                input type="hidden" name="update_type" value="delete"
+                input type="hidden" name='attribute[values][label]' value="#{v['label']}"
+                input type="hidden" name='attribute[values][value]' value="#{v['value']}"
+                = a.submit "Delete", class: 'btn btn-danger'
+    = form_with model: @attribute, url: admin_attribute_path do |a|
+      input type="hidden" name="update_type" value="new"
+      .input-group
+        .input-group-prepend
+          .input-group-text
+            | Add new value
+        input.form-control type="text" name='attribute[values][label]' placeholder="Label"
+        input.form-control type="text" name='attribute[values][value]' placeholder="Value"
+        .input-group-append
+          = a.submit "Add Value", class: 'btn btn-primary'
+      p.text-danger.m-0 = flash[:errors]
