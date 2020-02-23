@@ -58,10 +58,11 @@ ActiveRecord::Schema.define(version: 2020_02_13_182814) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.string "route"
+    t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
+    t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
   create_table "media_items", force: :cascade do |t|
