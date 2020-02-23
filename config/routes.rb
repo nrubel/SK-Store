@@ -28,6 +28,6 @@ Rails.application.routes.draw do
     end
     resources :products
     resources :categories
-    resources :attribute
+    resources :attribute, only: [:index, :show, :create, :update, :destroy]
   end
 end
